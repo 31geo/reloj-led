@@ -1,7 +1,7 @@
 body {
     margin: 0;
     height: 100vh;
-    background: #d9d9d9; /* FONDO PLOMO */
+    background: #d9d9d9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,50 +11,53 @@ body {
 
 .container {
     text-align: center;
+    padding: 20px;
 }
 
+/* LOGO */
 .logo {
-    width: 450px; /* un poco más grande */
+    width: 450px;
+    max-width: 80%;
     margin-bottom: 30px;
 }
 
+/* TEXTO PRINCIPAL */
 #day {
-    font-size: 90px;   /* antes 48px */
+    font-size: 90px;
     font-weight: bold;
     letter-spacing: 4px;
 }
 
 #date {
-    font-size: 55px;   /* antes 32px */
+    font-size: 55px;
     opacity: 0.9;
     margin-bottom: 25px;
 }
 
 #clock {
-    font-size: 160px;  /* antes 120px */
+    font-size: 160px;
     font-weight: bold;
     letter-spacing: 5px;
     text-shadow: 0 0 22px #8d8d8d;
 }
 
-/* TOPBAR moderno */
+/* TOPBAR MODERNO */
 .topbar {
     width: 100%;
-    background: linear-gradient(to right, #1f1f1f, #3a3a3a); /* degradado elegante */
+    background: linear-gradient(to right, #1f1f1f, #3a3a3a);
     color: #ffffff;
     padding: 14px 0;
     overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
-    border-bottom: 3px solid #00c6ff; /* línea de acento moderna */
+    border-bottom: 3px solid #00c6ff;
 }
 
 .scroll-text {
     display: inline-block;
     font-size: 30px;
     font-weight: bold;
-    letter-spacing: 2px;
     white-space: nowrap;
     padding-left: 100%;
     animation: scroll 18s linear infinite;
@@ -65,4 +68,56 @@ body {
 @keyframes scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }
+}
+
+/* ──────────────────────────────── */
+/* 📱 RESPONSIVE PARA CELULARES     */
+/* ──────────────────────────────── */
+@media (max-width: 768px) {
+
+    #day {
+        font-size: 50px;
+        letter-spacing: 2px;
+    }
+
+    #date {
+        font-size: 35px;
+    }
+
+    #clock {
+        font-size: 85px;
+        letter-spacing: 3px;
+    }
+
+    .logo {
+        width: 70%;
+    }
+
+    .scroll-text {
+        font-size: 22px;
+    }
+
+    .topbar {
+        padding: 10px 0;
+    }
+}
+
+/* 📱 Móviles pequeños (320–480px) */
+@media (max-width: 480px) {
+
+    #day {
+        font-size: 42px;
+    }
+
+    #date {
+        font-size: 28px;
+    }
+
+    #clock {
+        font-size: 70px;
+    }
+
+    .scroll-text {
+        font-size: 18px;
+    }
 }
