@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: #d9d9d9; /* FONDO PLOMO */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #000000;
+}
+
+.container {
+    text-align: center;
+}
+
+.logo {
+    width: 450px; /* un poco más grande */
+    margin-bottom: 30px;
+}
+
+#day {
+    font-size: 90px;   /* antes 48px */
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+#date {
+    font-size: 55px;   /* antes 32px */
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+#clock {
+    font-size: 160px;  /* antes 120px */
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-shadow: 0 0 22px #8d8d8d;
+}
+
+/* TOPBAR moderno */
+.topbar {
+    width: 100%;
+    background: linear-gradient(to right, #1f1f1f, #3a3a3a); /* degradado elegante */
+    color: #ffffff;
+    padding: 14px 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 3px solid #00c6ff; /* línea de acento moderna */
+}
+
+.scroll-text {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: scroll 18s linear infinite;
+    text-shadow: 0 0 5px #00000055;
+}
+
+/* Animación del carrusel */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
