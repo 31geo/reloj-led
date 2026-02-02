@@ -6,104 +6,41 @@
 <title>Reloj LED</title>
 
 <style>
-/* ======== ESTILOS GENERALES ======== */
 body {
     margin: 0;
-    height: 100vh;
-    background: #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: #000;
     font-family: Arial, sans-serif;
-    color: #ffffff;
-}
-
-/* ======== TOPBAR ======== */
-.topbar {
-    width: 100%;
-    background: #222;
-    color: #fff;
-    padding: 10px 0;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-}
-
-.scroll-text {
-    display: inline-block;
-    font-size: 28px;
-    white-space: nowrap;
-    padding-left: 100%;
-    animation: scroll 18s linear infinite;
-}
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-/* ======== CONTENEDOR CENTRAL ======== */
-.container {
+    color: red;
     text-align: center;
-    margin-top: 100px;
+    overflow: hidden;
 }
 
-.logo {
-    width: 250px;
-    margin-bottom: 30px;
-}
-
-/* ======== TIPOGRAFÍA ======== */
+/* ==== Textos reducidos para 448×352 ==== */
 #day {
-    font-size: 90px;
+    font-size: 40px;
     font-weight: bold;
-    letter-spacing: 4px;
+    margin-top: 10px;
 }
 
 #date {
-    font-size: 55px;
-    opacity: 0.9;
-    margin-bottom: 25px;
+    font-size: 22px;
+    margin-bottom: 5px;
 }
 
 #clock {
-    font-size: 160px;
+    font-size: 70px;
     font-weight: bold;
-    letter-spacing: 5px;
-    text-shadow: 0 0 22px #8d8d8d;
-}
-
-/* ======== RESPONSIVE ======== */
-@media (max-width: 768px) {
-    .logo { width: 300px; }
-    #day { font-size: 60px; }
-    #date { font-size: 40px; }
-    #clock { font-size: 100px; }
-    .scroll-text { font-size: 20px; }
+    margin-top: 5px;
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- ======== TOPBAR ======== -->
-<div class="topbar">
-    <div class="scroll-text">
-        Pantallas LED - Escenarios - Publicidad - Grupo Electrógeno - Luces e Iluminación
-    </div>
-</div>
+<div id="day"></div>
+<div id="date"></div>
+<div id="clock"></div>
 
-<!-- ======== CONTENIDO ======== -->
-<div class="container">
-    <img src="img/logo-ingedig-1.png" class="logo" alt="Logo" />
-
-    <div id="day"></div>
-    <div id="date"></div>
-    <div id="clock"></div>
-</div>
-
-<!-- ======== RELOJ EN VIVO (JS INTERNO, COMPATIBLE) ======== -->
 <script>
 function updateClock() {
     let now = new Date();
