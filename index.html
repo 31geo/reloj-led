@@ -6,36 +6,46 @@
 <title>Reloj LED</title>
 
 <style>
+/* ======== ESTILOS GENERALES ======== */
 body {
     margin: 0;
     background: #000;
     font-family: Arial, sans-serif;
-    color: red;
+    color: #ff0000;
     text-align: center;
-    overflow: hidden;
 }
 
-/* ==== Textos reducidos para 448×352 ==== */
+/* ======== LOGO (REDUCIDO PARA 448PX) ======== */
+.logo {
+    width: 200px;
+    margin-top: 5px;
+}
+
+/* ======== TEXTOS AJUSTADOS AL PANEL ======== */
 #day {
     font-size: 40px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 #date {
     font-size: 22px;
+    margin-top: -5px;
     margin-bottom: 5px;
 }
 
 #clock {
-    font-size: 70px;
+    font-size: 75px;
     font-weight: bold;
-    margin-top: 5px;
+    margin-top: 0px;
 }
 </style>
+
 </head>
 
 <body>
+
+<img src="img/logo-ingedig-1.png" class="logo" alt="Logo">
 
 <div id="day"></div>
 <div id="date"></div>
@@ -43,6 +53,7 @@ body {
 
 <script>
 function updateClock() {
+
     let now = new Date();
 
     let days = ["DOMINGO","LUNES","MARTES","MIÉRCOLES","JUEVES","VIERNES","SÁBADO"];
@@ -69,3 +80,4 @@ updateClock();
 
 </body>
 </html>
+
