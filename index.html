@@ -13,80 +13,79 @@
             font-family: Arial, sans-serif;
             background: #000;
             color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             text-align: center;
         }
 
         .container {
-            margin-top: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 180px;
+            margin-bottom: 20px;
         }
 
         .hora {
-            font-size: 95px;       /* HORA MÁS GRANDE */
+            font-size: 70px;
             font-weight: bold;
             margin: 10px 0;
         }
 
         .fecha {
-            font-size: 38px;       /* FECHA MÁS GRANDE */
+            font-size: 28px;
+            margin-bottom: 20px;
             color: #cccccc;
-            margin-bottom: 25px;
         }
 
         .titulo {
-            font-size: 50px;       /* TÍTULO MÁS GRANDE */
-            margin-top: 10px;
-            letter-spacing: 4px;
+            font-size: 38px;
+            margin-top: 20px;
+            letter-spacing: 3px;
         }
 
-        .texto {
-            font-size: 35px;
-            color: yellow;
-        }
     </style>
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
+        
 
-    <div id="hora" class="hora">00:00:00 AM</div>
-    <div id="fecha" class="fecha">Cargando fecha...</div>
+        <div id="hora" class="hora">00:00:00</div>
+        <div id="fecha" class="fecha">Cargando fecha...</div>
 
-    <h1 class="titulo">INGEDIG – Ingeniería Digital</h1>
+        <h1 class="titulo">INGEDIG</h1>
+    </div>
 
-   
-</div>
+    <script>
+        function actualizarReloj() {
+            const ahora = new Date();
 
-<script>
-    function actualizarReloj() {
-        const ahora = new Date();
+            let horas = String(ahora.getHours()).padStart(2, '0');
+            let minutos = String(ahora.getMinutes()).padStart(2, '0');
+            let segundos = String(ahora.getSeconds()).padStart(2, '0');
 
-        let horas = ahora.getHours();
-        let minutos = String(ahora.getMinutes()).padStart(2, '0');
-        let segundos = String(ahora.getSeconds()).padStart(2, '0');
+            const dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+            const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
+                "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+            ];
 
-        let ampm = horas >= 12 ? "PM" : "AM";
-        horas = horas % 12;
-        horas = horas === 0 ? 12 : horas; // convierte 0 en 12
+            let diaSemana = dias[ahora.getDay()];
+            let dia = ahora.getDate();
+            let mes = meses[ahora.getMonth()];
+            let año = ahora.getFullYear();
 
-        horas = String(horas).padStart(2, '0');
+            document.getElementById("hora").textContent = `${horas}:${minutos}:${segundos}`;
+            document.getElementById("fecha").textContent = `${diaSemana}, ${dia} de ${mes} del ${año}`;
+        }
 
-        const dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
-        const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-
-        let diaSemana = dias[ahora.getDay()];
-        let dia = ahora.getDate();
-        let mes = meses[ahora.getMonth()];
-        let año = ahora.getFullYear();
-
-        document.getElementById("hora").textContent = `${horas}:${minutos}:${segundos} ${ampm}`;
-        document.getElementById("fecha").textContent = `${diaSemana}, ${dia} de ${mes} del ${año}`;
-    }
-
-    setInterval(actualizarReloj, 1000);
-    actualizarReloj();
-</script>
+        setInterval(actualizarReloj, 1000);
+        actualizarReloj();
+    </script>
 
 </body>
 
